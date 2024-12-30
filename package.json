@@ -1,0 +1,22 @@
+{
+  "name": "estoque-handlebars",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=.env ./src/server.js",
+    "dev": "nodemon --env-file=.env ./src/server.js"
+  },
+  "keywords": [],
+  "author": "Vicente Francisco de Carvalho Neto",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "estoque-handlebars": "file:",
+    "express": "^4.21.2",
+    "express-handlebars": "^8.0.1",
+    "knex": "^3.1.0",
+    "mysql2": "^3.12.0",
+    "zod": "^3.24.1"
+  }
+}
