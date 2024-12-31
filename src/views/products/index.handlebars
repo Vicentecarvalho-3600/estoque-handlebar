@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1>Lista de Produtos</h1>
+  <a href="/products/new" class="btn btn-primary">Novo Produto</a>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Preço</th>
+      <th>Quantidade em Estoque</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each products}}
+      <tr>
+        <td>{{nome}}</td>
+        <td>R$ {{preco}}</td>
+        <td>{{quantidade}}</td>
+        <td>
+          <a href="/products/{{id}}" class="btn btn-info btn-sm">Ver</a>
+          <a
+            href="/products/{{id}}/edit"
+            class="btn btn-warning btn-sm"
+          >Editar</a>
+          <form
+            action="/products/{{id}}?_method=DELETE"
+            method="POST"
+            class="d-inline"
+          >
+            <button
+              type="submit"
+              class="btn btn-danger btn-sm"
+              onclick="return confirm('Tem certeza?')"
+            >Excluir</button>
+          </form>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
