@@ -13,4 +13,18 @@ export class ProductController {
       res.status(500).render("error", { message: "Erro ao lista produtos" });
     }
   }
+
+  async show(req, res) {
+    try {
+      const product = await this.productModel.findById(req.params.id);
+      if (!product) {
+        return res
+          .status(404)
+          .render("error", { message: "Produto não encontrado" });
+      }
+      res.render("products/show", { product });
+    } catch (error) {
+      res.status(500).render("error", { message: "Erro ao buscar produto" });
+    }
+  }
 }
