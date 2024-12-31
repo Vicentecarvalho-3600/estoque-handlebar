@@ -1,0 +1,74 @@
+<div class="mb-3">
+  <label for="nome" class="form-label">Nome</label>
+  <input
+    type="text"
+    class="form-control"
+    id="nome"
+    name="nome"
+    value="{{nome}}"
+    required
+  />
+  {{#if errors.nome}}
+    <div class="text-danger">{{errors.nome}}</div>
+  {{/if}}
+</div>
+
+<div class="mb-3">
+  <label for="descricao" class="form-label">Descrição</label>
+  <textarea
+    class="form-control"
+    id="descricao"
+    name="descricao"
+    required
+  >{{descricao}}</textarea>
+  {{#if errors.descricao}}
+    <div class="text-danger">
+      {{errors.descricao}}
+    </div>
+  {{/if}}
+</div>
+
+<div class="mb-3">
+  <label for="categoria" class="form-label">Categoria</label>
+  <input
+    type="text"
+    class="form-control"
+    id="categoria"
+    name="categoria"
+    value="{{categoria}}"
+    required
+  />
+  {{#if errors.categoria}}
+    <div class="text-danger">{{errors.categoria}}</div>
+  {{/if}}
+</div>
+
+<div class="mb-3">
+  <label for="preco" class="form-label">Preço</label>
+  <input
+    type="number"
+    class="form-control"
+    id="preco"
+    name="preco"
+    value="{{preco}}"
+    required
+  />
+  {{#if errors.preco}}
+    <div class="text-danger">{{errors.preco}}</div>
+  {{/if}}
+</div>
+
+<div class="mb-3">
+  <label for="quantidade" class="form-label">Quantidade</label>
+  <input
+    type="number"
+    class="form-control"
+    id="quantidade"
+    name="quantidade"
+    value="{{quantidade}}"
+    required
+  />
+  {{#if errors.quantidade}}
+    <div class="text-danger">{{errors.quantidade}}</div>
+  {{/if}}
+</div>
