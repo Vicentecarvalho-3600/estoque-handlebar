@@ -25,4 +25,14 @@ export class ProductModel {
       throw error;
     }
   }
+
+  async create(producData) {
+    try {
+      const [productId] = await db("produtos").insert(producData);
+      return productId;
+    } catch (error) {
+      console.error("Erro ao Criar produto", error);
+      throw error;
+    }
+  }
 }
