@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-header">
+    <h2>{{product.name}}</h2>
+  </div>
+  <div class="card-body">
+    <p><strong>Descrição:</strong>{{product.descricao}}</p>
+    <p><strong>Categoria:</strong>{{product.categoria}}</p>
+    <p><strong>Preço:</strong> R$ {{product.preco}}</p>
+    <p><strong>Quandidade em estoque:</strong>{{product.quantidade}}</p>
+    <p><strong>Localização:</strong>{{product.localizacao}}</p>
+  </div>
+  <div class="card-footer">
+    <a href="/products" class="btn btn-secondary">Voltar</a>
+    <a href="/products/{{product.id}}/edit" class="btn btn-warning">Editar</a>
+  </div>
+</div>
