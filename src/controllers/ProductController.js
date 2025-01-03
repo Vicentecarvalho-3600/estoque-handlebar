@@ -101,4 +101,13 @@ export class ProductController {
       }
     }
   }
+
+  async delete(req, res) {
+    try {
+      await this.productModel.delete(req.params.id);
+      res.redirect("/products");
+    } catch (error) {
+      res.status(500).render("error", { message: "Erro ao deletar produto" });
+    }
+  }
 }
