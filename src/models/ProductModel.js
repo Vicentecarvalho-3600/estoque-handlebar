@@ -46,4 +46,14 @@ export class ProductModel {
       throw error;
     }
   }
+
+  async delete(id) {
+    try {
+      await db("produtos").where("id", id).del();
+      return true;
+    } catch (error) {
+      console.error("Erro ao atualizar produto", error);
+      throw error;
+    }
+  }
 }
