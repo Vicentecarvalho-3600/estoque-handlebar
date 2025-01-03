@@ -70,4 +70,35 @@ export class ProductController {
       }
     }
   }
+
+  async update(req, res) {
+    try {
+      const productData = {
+        nome: req.body.nome,
+        preco: Number(req.body.preco),
+        descricao: req.body.descricao,
+        categoria: req.body.categoria,
+      };
+      const estoqueData = {
+        quantidade: Number(req.body.quantidade),
+        localizacao: req.body.localizacao,
+      };
+
+      await this.productModel.update(req.params.id, productData);
+      await this.stockModel.update(req.params.id, estoqueData);
+
+      res.redirect(`/products/${req.params.id}`);
+    } catch (error) {
+      if (error.errors) {
+        res.status(400).render("products/edit", {
+          errors: error.errors,
+          data: { ...req.body, id: req.params.id },
+        });
+      } else {
+        res
+          .status(500)
+          .render("error", { message: "Erro ao atualizar produto" });
+      }
+    }
+  }
 }
