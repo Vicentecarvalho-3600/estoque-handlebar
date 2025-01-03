@@ -36,4 +36,14 @@ export class ProductModel {
       throw error;
     }
   }
+
+  async update(id, producData) {
+    try {
+      await db("produtos").where("id", id).update(producData);
+      return true;
+    } catch (error) {
+      console.error("Erro ao atualizar produto", error);
+      throw error;
+    }
+  }
 }
