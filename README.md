@@ -11,7 +11,7 @@ Este é um projeto Node.js que visa e um template para poder iniciar qualquer ti
 
 ## Instalação
 
-1. Clone o repositório: `git clone https://github.com/Vicentecarvalho-3600/node-template.git`
+1. Clone o repositório: `git clone https://github.com/Vicentecarvalho-3600/estoque-handlebar.git`
 2. Instale as dependências: `npm install`
 3. Inicie o projeto: `npm start`
 
