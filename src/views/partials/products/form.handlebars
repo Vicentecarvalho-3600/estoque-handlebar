@@ -8,24 +8,20 @@
     value="{{nome}}"
     required
   />
-  {{#if errors.nome}}
-    <div class="text-danger">{{errors.nome}}</div>
-  {{/if}}
+  {{#if errors.nome}}<div class="text-danger">{{errors.nome}}</div>{{/if}}
 </div>
 
 <div class="mb-3">
   <label for="descricao" class="form-label">Descrição</label>
-  <textarea
+  <input
     class="form-control"
     id="descricao"
     name="descricao"
-    required
-  >{{descricao}}</textarea>
-  {{#if errors.descricao}}
-    <div class="text-danger">
-      {{errors.descricao}}
-    </div>
-  {{/if}}
+    value="{{descricao}}"
+  />
+  {{#if errors.descricao}}<div
+      class="text-danger"
+    >{{errors.descricao}}</div>{{/if}}
 </div>
 
 <div class="mb-3">
@@ -38,28 +34,27 @@
     value="{{categoria}}"
     required
   />
-  {{#if errors.categoria}}
-    <div class="text-danger">{{errors.categoria}}</div>
-  {{/if}}
+  {{#if errors.categoria}}<div
+      class="text-danger"
+    >{{errors.categoria}}</div>{{/if}}
 </div>
 
 <div class="mb-3">
   <label for="preco" class="form-label">Preço</label>
   <input
     type="number"
+    step="0.01"
     class="form-control"
     id="preco"
     name="preco"
     value="{{preco}}"
     required
   />
-  {{#if errors.preco}}
-    <div class="text-danger">{{errors.preco}}</div>
-  {{/if}}
+  {{#if errors.preco}}<div class="text-danger">{{errors.preco}}</div>{{/if}}
 </div>
 
 <div class="mb-3">
-  <label for="quantidade" class="form-label">Quantidade</label>
+  <label for="quantidade" class="form-label">Quantidade em Estoque</label>
   <input
     type="number"
     class="form-control"
@@ -68,7 +63,22 @@
     value="{{quantidade}}"
     required
   />
-  {{#if errors.quantidade}}
-    <div class="text-danger">{{errors.quantidade}}</div>
-  {{/if}}
+  {{#if errors.quantidade}}<div
+      class="text-danger"
+    >{{errors.quantidade}}</div>{{/if}}
+</div>
+
+<div class="mb-3">
+  <label for="localizacao" class="form-label">Localização no Estoque</label>
+  <input
+    type="text"
+    class="form-control"
+    id="localizacao"
+    name="localizacao"
+    value="{{localizacao}}"
+    required
+  />
+  {{#if errors.localizacao}}<div
+      class="text-danger"
+    >{{errors.localizacao}}</div>{{/if}}
 </div>

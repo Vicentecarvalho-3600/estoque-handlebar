@@ -1,4 +1,4 @@
-import db from "../config/database";
+import db from "../config/database.js";
 
 export class StockModel {
   async update(productId, stockData) {
@@ -7,10 +7,10 @@ export class StockModel {
         .where("produto_id", productId)
         .first();
       if (existingStock) {
-        await db("estoque").where("product_id", productId).update(stockData);
+        await db("estoque").where("produto_id", productId).update(stockData);
       } else {
         await db("estoque").insert({
-          product_id: productId,
+          produto_id: productId,
           ...stockData,
         });
       }
