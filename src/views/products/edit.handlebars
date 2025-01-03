@@ -1,6 +1,6 @@
 <h2>Editar Produto</h2>
 
-<form action="/products/{{product.id}}?_method=PUT" method="POST">
+<form action="/products/{{product.id}}" method="POST">
   {{> products/form product}}
   <button type="submit" class="btn btn-primary">Atualizar Produto</button>
   <a href="/products" class="btn btn-secondary">Cancelar</a>
