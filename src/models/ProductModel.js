@@ -18,6 +18,7 @@ export class ProductModel {
       const product = await db("produtos")
         .select("produtos.*", "estoque.quantidade", "estoque.localizacao")
         .leftJoin("estoque", "produtos.id", "estoque.produto_id")
+        .where("produtos.id", id)
         .first();
       return product;
     } catch (error) {
